@@ -1,0 +1,133 @@
+.index-search{
+    display: block;
+    height: 30%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    &__container{
+        width: 100%;
+        display: flex;
+        height: 36px;
+    }
+
+    &__select{
+        background: #fff;
+        height: 36px;
+        width: 136px;
+        line-height: 36px;
+        position: relative;
+        border-radius: 4px 0px 0px 4px;
+    }
+
+    &__filter{
+        width: 100%;
+        height: 100%;
+        line-height: 36px;
+        text-align: center;
+        position: relative;
+        border-right: 1px solid #ccc;
+        cursor: pointer;
+        &::after{
+            position: absolute;
+            top: 50%;
+            right: 9px;
+            display: block;
+            width: 0;
+            height: 0;
+            margin-top: -2px;
+            margin-left: 2px;
+            content: '';
+            vertical-align: middle;
+            border-top: 4px dashed #333;
+            border-right: 4px solid transparent;
+            border-left: 4px solid transparent;
+        }
+    }
+
+    &__list{
+        position: absolute;
+        top: 38px;
+        width: 100%;
+        background: #fff;
+    }
+
+    &__item{
+        width: 100%;
+        padding: 4px 8px;
+        cursor: pointer;
+        text-align: center;
+        transition: 0.4s;
+        &:hover{
+            background: #ccc;
+        }
+    }
+
+    &__input{
+        background: #fff;
+        height: 36px;
+        border: none;
+        width: 75%;
+        padding-left: 20px;
+    }
+
+    &__btn{
+        background: #9e0b0f;
+        width: 80px;
+        height: 36px;
+        border-radius: 0px 4px 4px 0px;
+        position: relative;
+        cursor: pointer;
+        border: none;
+        &_load{
+            &::after{
+                background: transparent!important;
+                content: '';
+                position: absolute;
+                top: 50%!important;
+                left: 50%!important;
+                margin: -13px 0 0 -11px!important;
+                border: 4px solid #fff;
+                border-top-color: transparent;
+                border-left-color: transparent;
+                border-radius: 50%;
+                -webkit-animation: loadingSpinner 0.7s infinite linear;
+                animation: loadingSpinner 0.7s infinite linear;
+                -webkit-transition: 0.4s;
+                transition: 0.4s;
+                z-index: 2000;
+            }
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            left: 31px;
+            top: 10px;
+            background: transparent url(../i/origin/sprite.png) -36px -289px no-repeat;
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+@-webkit-keyframes loadingSpinner {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loadingSpinner {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

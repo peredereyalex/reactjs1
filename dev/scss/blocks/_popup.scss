@@ -1,0 +1,314 @@
+.popup {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    z-index: 200;
+    padding: 18px 39px 22px 39px;
+
+    &__close {
+        cursor: pointer;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: transparent url($images-path + 'sprite.png') map_get($popup_close, position) no-repeat;
+        width: map_get($popup_close, width);
+        height: map_get($popup_close, height);
+    }
+
+    &__title {
+        font-size: 18px;
+        color: #000;
+        letter-spacing: 1px;
+    }
+
+    &__input {
+        height: 34px;
+        width: 360px;
+        background: none;
+        font-size: 14px;
+        color: #000;
+        letter-spacing: 1px;
+        border: 2px solid #D2D2D2;
+        padding: 0 9px 3px 11px;
+        margin: 10px 0 0;
+    }
+
+    &__buttons {
+        width: 242px;
+        height: 34px;
+        margin: 30px auto 0px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__add-button {
+        cursor: pointer;
+        width: 105px;
+        height: 34px;
+        background: #FFCD00;
+        color: #000;
+        font-size: 12px;
+        letter-spacing: 0.85px;
+        text-align: center;
+        border: none;
+    }
+
+    &__cancel-button {
+        cursor: pointer;
+        width: 105px;
+        color: #000;
+        font-size: 12px;
+        letter-spacing: 0.85px;
+        text-align: center;
+        margin: 0 0 0 16px;
+    }
+}
+
+.popup_favorite_add{
+    width: 438px;
+    .popup__title{
+        margin-bottom: 10px;
+    }
+}
+
+.infowindow {
+    display: block;
+    width: 200px;
+    background: #fff;
+    box-shadow: 0 2px 14px 0 rgba(0,0,0,.9);
+    padding: 4px;
+    text-decoration: none !important;
+
+    &__image-wrap {
+        position: relative;
+        height: 120px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-size: 100%;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 65%, rgba(0, 0, 0, 0.8) 100%);
+            z-index: 1;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 120px;
+    }
+
+    &__price {
+        position: absolute;
+        left: 5px;
+        bottom: 22px;
+        color: #fff;
+        font-size: 16px;
+        z-index: 2;
+        font-weight: 500;
+
+        &__sqft {
+            font-size: 12px;
+            bottom: 5px;
+        }
+    }
+
+    &__title {
+        color: #000;
+        font-size: 14px;
+        font-weight: 700;
+        margin: 7px 0 0 5px;
+        letter-spacing: -0.3px;
+    }
+
+    &__address {
+        color: #6f6f6f;
+        font-size: 12px;
+        margin: -1px 0 0 5px;
+    }
+
+    &__props {
+        color: #000;
+        font-weight: 700;
+        font-size: 12px;
+        margin: 1px 0 0 5px;
+        letter-spacing: -0.4px;
+    }
+
+    &__type {
+        color: #000;
+        font-weight: 700;
+        font-size: 12px;
+        margin: 1px 0 0 5px;
+        letter-spacing: -0.4px;
+    }
+}
+
+.popup-auth {
+    display: none;
+    position: fixed;
+    width: 468px;
+    height: 366px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    z-index: 200;
+
+    &__alert{
+        font-size: 15px;
+        font-weight: 400;
+        color: #9e0b0f;
+        margin: 5px 0px 0px 0px;
+        height: 20px;
+    }
+
+    &__header {
+        background: #9e0b0f;
+        position: relative;
+        width: 100%;
+        height: 64px;
+        color: #fff;
+        display: flex;
+    }
+
+    &__header-tab {
+        font-size: 19px;
+        text-align: center;
+        padding: 0 31px 0 25px;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        line-height: 61px;
+        transition: all 0.3s ease;
+
+        &_active {
+            background: #fff;
+            color: #000;
+        }
+    }
+
+    &__close {
+        cursor: pointer;
+        position: absolute;
+        top: 22px;
+        right: 19px;
+        background: transparent url($images-path + 'sprite.png') map_get($auth_close, position) no-repeat;
+        width: map_get($auth_close, width);
+        height: map_get($auth_close, height);
+    }
+
+    &__form {
+        width: 408px;
+        margin: 30px auto 0;
+        display: none;
+
+        &_active {
+            display: block;
+        }
+    }
+
+    &__input-wrap {
+        position: relative;
+        border: 2px solid #dddddd;
+        // border-top: none;
+        transition: 0.4s;
+
+        &_wrong{
+            border: 2px solid #9e0b0f!important;
+        }
+
+        &::before {
+            z-index: 1;
+            content: '';
+            position: absolute;
+            background: transparent url($images-path + 'sprite.png') 0 0 no-repeat;
+            left: 13px;
+            top: 14px;
+        }
+
+        // &:first-child {
+        //     border-top: 2px solid #dddddd;
+        //     border-radius: 6px 6px 0 0;
+        // }
+        //
+        // &:last-child {
+        //     border-radius: 0 0 6px 6px;
+        // }
+
+        &_login {
+            &::before {
+                background-position: map_get($auth_login, position);
+                width: map_get($auth_login, width);
+                height: map_get($auth_login, height);
+            }
+        }
+
+        &_pass {
+            &::before {
+                background-position: map_get($auth_pass, position);
+                width: map_get($auth_pass, width);
+                height: map_get($auth_pass, height);
+            }
+        }
+
+        &_email {
+            &::before {
+                background-position: map_get($auth_mail, position);
+                width: map_get($auth_mail, width);
+                height: map_get($auth_mail, height);
+            }
+        }
+    }
+
+    &__input {
+        color: #959595;
+        font-size: 14px;
+        width: 100%;
+        height: 46px;
+        padding: 0 23px 0 43px;
+        letter-spacing: 0.7px;
+        border: none;
+        @include placeholder() {
+            color: #959595;
+            opacity: 1;
+        }
+
+        &_submit {
+            color: #fff;
+            background: #9e0b0f;
+            border-radius: 6px;
+            border-right: none;
+            cursor: pointer;
+            margin: 20px 0 0;
+            padding: 0;
+            text-align: center;
+        }
+    }
+
+    &__row {
+        margin: 5px 0 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__link {
+        color: #959595;
+        font-size: 16px;
+        opacity: 0.8;
+        text-decoration: none !important;
+
+        &:hover {
+            color: #959595;
+        }
+    }
+}

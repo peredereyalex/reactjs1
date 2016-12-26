@@ -1,0 +1,29 @@
+.checkbox {
+    position: relative;
+    color: #959595;
+    font-size: 15px;
+    user-select: none;
+    padding: 0;
+    cursor: pointer;
+
+    &::before {
+        content: '';
+        position: relative;
+        top: -1px;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 8px 0 0;
+        width: 14px;
+        height: 14px;
+        border-radius: 3px;
+        border: 1px solid #dddddd;
+        transition: all .3s ease;
+    }
+
+    &__checked {
+        &::before {
+            background: #9e0b0f;
+            border: 1px solid #9e0b0f;
+        }
+    }
+}

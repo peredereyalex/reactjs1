@@ -1,0 +1,204 @@
+.footer-wrap {
+  display: flex;
+  flex-direction: column;
+  background: #292929;
+  height: 260px;
+}
+
+.copyright-wrap {
+  background: #1F1F1F;
+}
+
+.copyright {
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin: 0 auto;
+  padding: 0 33px 0 33px;
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    width: 225px;
+
+    a {
+      text-decoration: none;
+
+      &:hover, &:focus {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  height: calc(100% - 54px);
+  margin: 0 auto;
+  padding: 0 33px 0 33px;
+
+  &__column {
+    padding: 37px 0 0 0;
+    display: inline-block;
+    vertical-align: top;
+
+    &_1 {
+      width: 290px;
+      margin: 0 34px 0 0;
+    }
+
+    &_2 {
+      width: 450px;
+    }
+
+    &_3 {
+      width: 390px;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 1.15px;
+
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    margin: 29px 0 0 0;
+    line-height: 16px;
+    letter-spacing: 1px;
+  }
+
+  &__contact {
+    position: relative;
+    color: #fff;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 1px;
+    margin: 15px 0 0 30px;
+    font-weight: 300;
+
+    &:first-child {
+      margin: 29px 0 0 30px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      background: transparent url($images-path + 'sprite.png') 0 0 no-repeat;
+      left: -30px;
+      top: 0;
+    }
+
+    &_location {
+      &::before {
+        background-position: map_get($location-arrow, position);
+        width: map_get($location-arrow, width);
+        height: map_get($location-arrow, height);
+      }
+    }
+
+    &_phone {
+      &::before {
+        background-position: map_get($phone, position);
+        width: map_get($phone, width);
+        height: map_get($phone, height);
+      }
+    }
+
+    &_mail {
+      &::before {
+        background-position: map_get($mail, position);
+        width: map_get($mail, width);
+        height: map_get($mail, height);
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    position: relative;
+    margin: 13px 0 0 1px;
+  }
+
+  &__mail-ico {
+    position: absolute;
+    background: transparent url($images-path + 'sprite.png') map_get($mail_ico, position) no-repeat;
+    width: map_get($mail_ico, width);
+    height: map_get($mail_ico, height);
+    top: 13px;
+    left: 14px;
+  }
+
+  &__input-text {
+    width: 295px;
+    height: 36px;
+    font-size: 14px;
+    color: #999999;
+    padding: 0 10px 0 39px;
+    border: none;
+    background: #fff;
+    letter-spacing: 1px;
+    border-radius: 4px;
+  }
+
+  &__input-submit {
+    cursor: pointer;
+    background: #9E0B0F;
+    width: 71px;
+    height: 36px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 1px;
+    border: none;
+    margin: 0 0 0 23px;
+    border-radius: 4px;
+  }
+}
+
+.follow {
+  margin: 27px 0 0 0;
+
+  &__title {
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #fff;
+  }
+
+  &__social {
+    margin: 8px 0 0 0;
+    display: flex;
+  }
+
+  &__social-ico {
+    text-decoration: none;
+    background: transparent url($images-path + 'sprite.png') 0 0 no-repeat;
+    margin: 0 8px 0 0;
+
+    &_facebook {
+      background-position: map_get($facebook, position);
+      width: map_get($facebook, width);
+      height: map_get($facebook, height);
+    }
+
+    &_google {
+      background-position: map_get($google, position);
+      width: map_get($google, width);
+      height: map_get($google, height);
+    }
+
+    &:last-child {
+      margin: 0 0 0 0;
+    }
+  }
+}
